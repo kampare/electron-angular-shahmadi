@@ -1,0 +1,12 @@
+<form>
+  <fieldset>
+    <legend>entry creator</legend>
+    <div ng-repeat="meta in $ctrl.meta">
+      <label>{{meta.name}}</label>
+      <input ng-model="$ctrl.entry[meta._id]">
+    </div>
+    <div>
+      <button ng-click="$ctrl.create($ctrl.entry)">create entry</button>
+    </div>
+  </fieldset>
+</form>

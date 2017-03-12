@@ -1,0 +1,22 @@
+<h2>book management</h2>
+<book-creator></book-creator>
+<table border="1">
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="book in $ctrl.books">
+      <td>
+        <input ng-model="book.title">
+      </td>
+      <td>
+        <button ng-click="$ctrl.open(book)">open</button>
+        <button ng-click="$ctrl.update(book)">update</button>
+        <button ng-click="$ctrl.remove(book)">remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

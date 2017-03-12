@@ -1,0 +1,24 @@
+<h2>entries in book</h2>
+<button ng-click="$ctrl.close()">close book</button>
+<entry-creator></entry-creator>
+<table border="1">
+  <thead>
+    <tr>
+      <th ng-repeat="meta in $ctrl.meta">
+        {{meta.name}}
+      </th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="entry in $ctrl.entries track by $index">
+      <td ng-repeat="meta in $ctrl.meta">
+        <input ng-model="entry[meta._id]">
+      </td>
+      <td>
+        <button ng-click="$ctrl.update(entry)">update</button>
+        <button ng-click="$ctrl.remove(entry)">remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

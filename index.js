@@ -1,0 +1,5 @@
+var metaDB = new PouchDB('shahmadi:meta')
+var bookDB = new PouchDB('shahmadi:book')
+var entryDB = new PouchDB('shahmadi:entry')
+var analyticsDB = new PouchDB('shahmadi:analytics')
+var app = angular.module('shahmadi', [])

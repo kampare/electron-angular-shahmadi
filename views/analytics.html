@@ -1,0 +1,23 @@
+<h2>game analytics</h2>
+
+<div>
+  <button ng-click="$ctrl.reload()">reload</button>
+  <button ng-click="$ctrl.reset()">reset</button>
+</div>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th ng-repeat="meta in $ctrl.meta">{{meta.name}}</th>
+      <th>appear</th>
+      <th>correct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="entry in $ctrl.entries track by $index">
+      <td ng-repeat="meta in $ctrl.meta">{{entry[meta._id]}}</td>
+      <td>{{$ctrl.analytics.appear[entry._id]}}</td>
+      <td>{{$ctrl.analytics.correct[entry._id]}}</td>
+    </tr>
+  </tbody>
+</table>

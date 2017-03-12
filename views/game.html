@@ -1,0 +1,25 @@
+<h2>game</h2>
+
+<div ng-if="$ctrl.state == 'pick'">
+  <button ng-click="$ctrl.pick()">start</button>
+</div>
+
+<div ng-repeat="meta in $ctrl.meta" ng-if="meta.face">
+  {{meta.name}}: {{$ctrl.entry[meta._id]}}
+</div>
+
+<hr ng-if="$ctrl.state != 'pick'">
+
+<div ng-repeat="meta in $ctrl.meta" ng-if="meta.mask">
+  {{meta.name}}: <span ng-if="$ctrl.state == 'answer'">{{$ctrl.entry[meta._id]}}</span>
+</div>
+
+<div ng-if="$ctrl.state == 'question'">
+  <button ng-click="$ctrl.answer()">show answer</button>
+  <button ng-click="$ctrl.skip()">skip</button>
+</div>
+
+<div ng-if="$ctrl.state == 'answer'">
+  <button ng-click="$ctrl.correct($ctrl.entry)">correct</button>
+  <button ng-click="$ctrl.wrong($ctrl.entry)">wrong</button>
+</div>

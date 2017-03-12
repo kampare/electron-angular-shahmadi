@@ -1,0 +1,20 @@
+<form>
+  <fieldset>
+    <legend>meta creator</legend>
+    <div>
+      <label>name</label>
+      <input ng-model="$ctrl.name">
+    </div>
+    <div>
+      <input ng-model="$ctrl.face" type="checkbox">
+      <label>face</label>
+    </div>
+    <div>
+      <input ng-model="$ctrl.mask" type="checkbox">
+      <label>mask</label>
+    </div>
+    <div>
+      <button ng-click="$ctrl.create($ctrl.name, $ctrl.face, $ctrl.mask)">create meta</button>
+    </div>
+  </fieldset>
+</form>

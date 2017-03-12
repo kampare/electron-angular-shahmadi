@@ -1,0 +1,29 @@
+<h2>meta management</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>face</th>
+      <th>mask</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in $ctrl.items track by $index">
+      <td>
+        <input ng-model="item.name">
+      </td>
+      <td>
+        <input ng-model="item.face" type="checkbox">
+      </td>
+      <td>
+        <input ng-model="item.mask" type="checkbox">
+      </td>
+      <td>
+        <button ng-click="$ctrl.update(item)">update</button>
+        <button ng-click="$ctrl.remove(item)">remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
